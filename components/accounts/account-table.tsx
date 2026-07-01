@@ -235,7 +235,7 @@ Renueva ahora y sigue accediendo a un mundo de entretenimiento sin límites. \n 
       const newStartDate = new Date(currentEndDate);
       const newEndDate = addDays(newStartDate, months * 30); // 30 days per month
 
-      const updatedProfile = {
+      const updatedProfile: Perfil = {
         ...selectedProfile,
         fechaInicio: newStartDate,
         fechaFin: newEndDate,

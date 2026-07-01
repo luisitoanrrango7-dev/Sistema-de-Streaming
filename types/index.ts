@@ -5,6 +5,7 @@ export interface Cliente {
   nombre: string;
   email: string;
   telefono: string;
+  direccion: string;
   fechaRegistro: Date;
 }
 
@@ -13,7 +14,10 @@ export interface Proveedor {
   nombre: string;
   email: string;
   telefono: string;
-  servicios: string[];
+  servicios?: string[];
+  direccion: string;
+  estado: string;
+  servicio: string;
   fechaRegistro: Date;
 }
 
@@ -32,6 +36,7 @@ export interface Servicio {
 export interface Cuenta {
   id: string;
   cuenta: string;
+  servicioId: string;
   nombreServicio: string;
   fechaFacturacion: Date;
   observacion: string;
@@ -56,4 +61,11 @@ export interface Perfil {
   generaPago: boolean;
   precio: number;
   telefono: string;
+}
+
+export interface User {
+  id: string;
+  email: string;
+  nombre: string;
+  rol: string;
 }

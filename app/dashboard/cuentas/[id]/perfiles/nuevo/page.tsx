@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { getAccount } from "@/lib/actions/accounts";
 import { getClients } from "@/lib/actions/clients";
 import { createProfile } from "@/lib/actions/profiles";
-import { Cliente, Cuenta } from "@/types";
+import { Cliente, Cuenta, Perfil } from "@/types";
 import { toast } from "sonner";
 import { ProfileForm } from "@/components/profiles/profile-form";
 import { addDays } from "date-fns";
@@ -48,7 +48,7 @@ export default function NuevoPerfilPage({ params }: { params: { id: string } }) 
       const client = clients.find(c => c.id === data.clienteId);
       if (!client || !account) return;
 
-      const profileData = {
+      const profileData: Partial<Perfil> = {
         cuentaId: account.id,
         clienteId: data.clienteId,
         nombreCliente: client.nombre,
